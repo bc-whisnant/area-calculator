@@ -1,17 +1,24 @@
 // generating inputs functions to be passed to functions
 function generateTriangleInputs() {
-    // base input
-    var baseInput = document.createElement('div');
-    baseInput.id = 'baseInput';
-    baseInput.innerHTML = '<input id="baseInputField">';
-    document.getElementById('area-contents').appendChild(baseInput);
 
-    // height input
-    var heightInput = document.createElement('div');
-    heightInput.id = 'heightInput';
-    heightInput.innerHTML = '<input id="heightInputField">';
-    document.getElementById('area-contents').appendChild(heightInput);
+    var baseInput;
+    var heightInput;
 
+    function baseAndHeight(baseInput, heightInput) {
+        // base input
+        baseInput = document.createElement('div');
+        baseInput.id = 'baseInput';
+        baseInput.innerHTML = '<input id="baseInputField">';
+        document.getElementById('area-contents').appendChild(baseInput);
+
+        // height input
+        var heightInput = document.createElement('div');
+        heightInput.id = 'heightInput';
+        heightInput.innerHTML = '<input id="heightInputField">';
+        document.getElementById('area-contents').appendChild(heightInput);
+    }
+    
+    baseAndHeight();
     calculateButtonCreation();
 
     document.getElementById('calc').addEventListener('click', function() {
@@ -29,12 +36,18 @@ function generateTriangleInputs() {
 
 // generating inputs functions to be passed to functions
 function generateSquareInputs() {
-    // base input
-    var sideInput = document.createElement('div');
-    sideInput.id = 'baseInput';
-    sideInput.innerHTML = '<input id="sideInputField">';
-    document.getElementById('area-contents').appendChild(sideInput);
 
+    var sideInput;
+
+    function sideValue(sideInput) {
+        // base input
+        sideInput = document.createElement('div');
+        sideInput.id = 'baseInput';
+        sideInput.innerHTML = '<input id="sideInputField">';
+        document.getElementById('area-contents').appendChild(sideInput);
+    } 
+    
+    sideValue();
     calculateButtonCreation();
 
     document.getElementById('calc').addEventListener('click', function() {
@@ -51,18 +64,25 @@ function generateSquareInputs() {
 
 // generating inputs functions to be passed to functions
 function generateRectangleInputs() {
-    // base input
-    var widthInput = document.createElement('div');
-    widthInput.id = 'baseInput';
-    widthInput.innerHTML = '<input id="widthInputField">';
-    document.getElementById('area-contents').appendChild(widthInput);
 
-    // height input
-    var lengthInput = document.createElement('div');
-    lengthInput.id = 'lengthInput';
-    lengthInput.innerHTML = '<input id="lengthInputField">';
-    document.getElementById('area-contents').appendChild(lengthInput);
+    var widthInput;
+    var lengthInput;
 
+    function widthAndLength(widthInput, lengthInput) {
+        // base input
+        widthInput = document.createElement('div');
+        widthInput.id = 'baseInput';
+        widthInput.innerHTML = '<input id="widthInputField">';
+        document.getElementById('area-contents').appendChild(widthInput);
+
+        // height input
+        lengthInput = document.createElement('div');
+        lengthInput.id = 'lengthInput';
+        lengthInput.innerHTML = '<input id="lengthInputField">';
+        document.getElementById('area-contents').appendChild(lengthInput);
+    }
+    
+    widthAndLength();
     calculateButtonCreation();
 
     document.getElementById('calc').addEventListener('click', function() {
